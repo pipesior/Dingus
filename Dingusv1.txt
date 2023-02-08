@@ -240,11 +240,8 @@ if game.PlaceId == 142823291 then
 elseif game.PlaceId == 6839171747 then
     local Doors = Window:NewTab("Doors")
     local Scr2 = Doors:NewSection("Scripts")
-    Scr2:NewButton("ESP GUI ", "Gui including ESP, Entity notifier, no skeleton doors and more", function()
+    Scr2:NewButton("ESP GUI (Executor Needed)", "Gui including ESP, Entity notifier, no skeleton doors and more", function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/zoophiliaphobic/POOPDOORS/main/script.lua'))()
-    end)
-    Scr2:NewButton("ESP GUI #2 ", "Gui including ESP, Entity notifier, no skeleton doors and more", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/OminousVibes-Exploit/Scripts/main/doors/main.lua"))()
     end)
     -- Universal
     local Universal = Window:NewTab("Universal")
