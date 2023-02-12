@@ -3978,7 +3978,7 @@ elseif game.PlaceId == 286090429 then
         loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Infinite%20Yield.txt"))()
     end)
 --Phantom Forces
-elseif game.PlaceID == 292439477 then
+elseif game.PlaceId == 292439477 then
     local pha = Window:NewTab("Phantom Forces")
     local Scr10 = pha:NewSection("Scripts")
     Scr10:NewButton("Aimbot and ESP", "Bruh", function()
@@ -4303,8 +4303,8 @@ elseif game.PlaceId == 6032399813 then
     end)
 --Beeswarm
 elseif game.PlaceId == 1537690962 then
-    local beedeep = Window:NewTab("Bee Swarm Simulator")
-    local Scr12 = beedeep:NewSection("Scripts")
+    local bee = Window:NewTab("Bee Swarm Simulator")
+    local Scr12 = bee:NewSection("Scripts")
     Scr12:NewButton("MACRO V2 GUI", "AUTO FARMS, ITEMS, PLANTERS, And more!!", function()
         loadstring(game:HttpGet("https://www.macrov2-script.xyz/macrov2.lua"))()
     end)
