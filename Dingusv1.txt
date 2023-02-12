@@ -4303,10 +4303,10 @@ elseif game.PlaceId == 6032399813 then
     end)
 --Beeswarm
 elseif game.PlaceId == 1537690962 then
-    local bee = Window:NewTab("Bee Swarm Simulator")
-    local Scr12 = bee:NewSection("Scripts")
+    local bee1 = Window:NewTab("Bee Swarm Simulator")
+    local Scr12 = bee1:NewSection("Scripts")
     Scr12:NewButton("MACRO V2 GUI", "AUTO FARMS, ITEMS, PLANTERS, And more!!", function()
-        loadstring(game:HttpGet("https://www.macrov2-script.xyz/macrov2.lua"))()
+        loadstring(game:HttpGet('https://s.kometa.ga/kometa.lua'))()
     end)
     -- Universal
     local Universal = Window:NewTab("Universal")
