@@ -4305,8 +4305,8 @@ elseif game.PlaceId == 6032399813 then
 elseif game.PlaceId == 1537690962 then
     local bee1 = Window:NewTab("Bee Swarm Simulator")
     local Scr12 = bee1:NewSection("Scripts")
-    Scr12:NewButton("Macro V2 GUI", "AUTO FARMS, ITEMS, PLANTERS, And more!!", function()
-        loadstring(game:HttpGet("https://www.macrov2-script.xyz/macrov2.lua"))()
+    Scr12:NewButton("Cloud Hub GUI (KEY:"CloudyKey")", "AUTO FARMS, ITEMS, PLANTERS, And more!!", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/BadScripters/CloudHub/main/hub"))()
     end)
     -- Universal
     local Universal = Window:NewTab("Universal")
