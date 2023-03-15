@@ -6696,4 +6696,14 @@ elseif game.PlaceId == 2788229376 then
             end
         )
     end)
+-- Arcane Odyssey
+elseif game.PlaceId == 12604352060 then
+    local Ao = Window:NewTab("Arcane Odyssey")
+    local Scr14 = Ao:NewSection("Scripts")
+    Scr14:NewButton("Auto Farm GUI", "an auto farm", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/itsyouranya/free/main/arcaneodyssey.lua'),true))()
+    end)
+    Scr14:NewButton("Misc GUI", "ESP,Chest Farms, mob detection and more", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/unknxwnlocal/localshitscripts/main/shitterarcane"))()
+    end)
 end
