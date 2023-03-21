@@ -450,8 +450,8 @@ if game.PlaceId == 142823291 then
            
            game.Players.LocalPlayer.Character.Humanoid.Health = 0
     end)
-    Scr1:NewButton("Multitool GUI", "Main cheat menu (multipurpose)", function()
-        loadstring(game:HttpGet('https://scripts.luawl.com/Main/Scourge.lua'))()
+    Scr1:NewButton("Murder/Sheriff ESP", "lets u see others", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Ihaveash0rtnamefordiscord/Releases/main/MurderMystery2HighlightESP"))(' Watermelon ?')
     end)
 --Doors
 elseif game.PlaceId == 6839171747 then
