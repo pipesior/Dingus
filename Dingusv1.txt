@@ -6703,4 +6703,11 @@ elseif game.PlaceId == 12604352060 then
     Scr14:NewButton("Misc/Farm GUI", "ESP,Chest Farms, mob detection and more", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/unknxwnlocal/localshitscripts/main/shitterarcane"))()
     end)
+--TOH
+elseif game.PlaceId == 1962086868 then
+    local TOH = Window:NewTab("Tower Of Hell")
+    local Scr15 = TOH:NewSection("Scripts")
+    Scr15:NewButton("Tower Of Hell SEMI LEGIT AUTO FINISH","SEMI-LEGIT AUTO FINISH,NO KILL PARTS,FREEZE CONVEYORS,FREEZE MOVING PARTS,ENABLE VELOCITY FLY,GIVE TOOLS" function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/centerepic/sasware_TowerOfHell/main/TowerOfHell_sw.lua"))()
+    end)
 end
