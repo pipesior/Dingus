@@ -1,0 +1,462 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local Window = Rayfield:CreateWindow({
+    Name = "Dingus MM2🔪",
+    LoadingTitle = "Dingus MM2 Script",
+    LoadingSubtitle = "by Pipes",
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = nil,
+       FileName = "DingusHub"
+    },
+    Discord = {
+       Enabled = true,
+       Invite = "KVfpGTXEx6",
+       RememberJoins = true
+    },
+    KeySystem = true,
+    KeySettings = {
+       Title = "Dingus key",
+       Subtitle = "Key System",
+       Note = "Get key from discord: https://discord.gg/KVfpGTXEx6",
+       FileName = "Sub2Dingus",
+       SaveKey = true,
+       GrabKeyFromSite = false,
+       Key = {"Sub2Dingus"}
+    }
+ })
+ Rayfield:Notify({
+    Title = "Notification",
+    Content = "Script Loaded",
+    Duration = 6.5,
+    Image = 4483362458,
+    Actions = {
+       Ignore = {
+          Name = "OK",
+          Callback = function()
+          print("The user tapped Okay!")
+       end
+    },
+ },
+ })
+ local MainTab = Window:CreateTab("Main", 4483362458)
+ local OtherTab = Window:CreateTab("Other", 4483362458)
+ local Section = MainTab:CreateSection("Main")
+ local Section = OtherTab:CreateSection("More GUI'S")
+ local Slider1 = MainTab:CreateSlider({
+    Name = "Speedhack",
+    Range = {0, 300},
+    Increment = 10,
+    Suffix = "Speed",
+    CurrentValue = 16,
+    Flag = "Sliders",
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+    end,
+ })
+ local Slider2 = MainTab:CreateSlider({
+    Name = "JumpPower",
+    Range = {1, 350},
+    Increment = 1,
+    Suffix = "Jump",
+    CurrentValue = 16,
+    Flag = "sliderjp",
+    Callback = function(Value)
+         game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Value)
+    end,
+ })
+ local Button1 = MainTab:CreateButton({
+    Name = "Fly",
+    Callback = function()
+        local FlyGui = Instance.new("ScreenGui")
+        local Frame = Instance.new("Frame")
+        local TextButton = Instance.new("TextButton")
+        local TextLabel = Instance.new("TextLabel")
+         
+        --Properties:
+         
+        FlyGui.Name = "FlyGui"
+        FlyGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+         
+        Frame.Parent = FlyGui
+        Frame.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+        Frame.BorderSizePixel = 0
+        Frame.Position = UDim2.new(0.0685602352, 0, 0.168769717, 0)
+        Frame.Size = UDim2.new(0.264544547, 0, 0.100000024, 0)
+         
+        TextButton.Parent = Frame
+        TextButton.BackgroundColor3 = Color3.fromRGB(66, 66, 66)
+        TextButton.BorderSizePixel = 0
+        TextButton.Position = UDim2.new(0.06324628, 0, 0.400667697, 0)
+        TextButton.Size = UDim2.new(0.871157169, 0, 0.495614201, 0)
+        TextButton.Font = Enum.Font.ArialBold
+        TextButton.Text = "Fly"
+        TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+        TextButton.TextScaled = true
+        TextButton.TextSize = 14.000
+        TextButton.TextStrokeTransparency = 0.000
+        TextButton.TextWrapped = true
+         
+        TextLabel.Parent = Frame
+        TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        TextLabel.Size = UDim2.new(0, 86, 0, 24)
+        TextLabel.Font = Enum.Font.Oswald
+        TextLabel.Text = "Made by Pipes"
+        TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+        TextLabel.TextScaled = true
+        TextLabel.TextSize = 14.000
+        TextLabel.TextWrapped = true
+         
+        -- Scripts:
+         
+        local function NQWSTGE_fake_script() -- Frame.Fly 
+            local script = Instance.new('LocalScript', Frame)
+         
+            local plr = script.Parent.Parent.Parent.Parent
+            repeat wait() until plr and plr.Character and plr.Character:findFirstChild("HumanoidRootPart") and plr.Character:findFirstChild("Humanoid") 
+            local mouse = game.Players.LocalPlayer:GetMouse()  
+            repeat wait() until mouse
+            
+            local torso = plr.Character.HumanoidRootPart 
+            local flying = false
+            local deb = true 
+            local ctrl = {f = 0, b = 0, l = 0, r = 0} 
+            local lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+            local maxspeed = 1000 
+            local speed = 50
+            function Fly() 
+            local bg = Instance.new("BodyGyro", torso) 
+            bg.P = 9e4 
+            bg.maxTorque = Vector3.new(9e9, 9e9, 9e9) 
+            bg.cframe = torso.CFrame 
+            local bv = Instance.new("BodyVelocity", torso) 
+            bv.velocity = Vector3.new(0,0.1,0) 
+            bv.maxForce = Vector3.new(9e9, 9e9, 9e9) 
+            repeat wait() 
+            plr.Character.Humanoid.PlatformStand = true 
+            if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then 
+            speed = speed+.5+(speed/maxspeed) 
+            if speed > maxspeed then 
+            speed = maxspeed 
+            end 
+            elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then 
+            speed = speed-1 
+            if speed < 0 then 
+                            speed = 0
+                        else
+                            speed = 50
+            end 
+            end 
+            if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then 
+            bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+            lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r} 
+            elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then 
+            bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+            else 
+            bv.velocity = Vector3.new(0,0.1,0) 
+            end 
+            bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0) 
+            until not flying 
+            ctrl = {f = 0, b = 0, l = 0, r = 0} 
+            lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+                
+            bg:Destroy() 
+            bv:Destroy() 
+                plr.Character.Humanoid.PlatformStand = false 
+                speed = 50
+            end 
+            
+            mouse.KeyDown:connect(function(key) 
+            if key:lower() == "e" then 
+                    if flying then flying = false 
+                        speed = 50
+            else 
+            flying = true 
+            Fly()
+            
+            end 
+            elseif key:lower() == "w" then 
+            ctrl.f = 1 
+            elseif key:lower() == "s" then 
+            ctrl.b = -1 
+            elseif key:lower() == "a" then 
+            ctrl.l = -1 
+            elseif key:lower() == "d" then 
+            ctrl.r = 1 
+            end 
+            end) 
+            mouse.KeyUp:connect(function(key) 
+            if key:lower() == "w" then 
+            ctrl.f = 0 
+            elseif key:lower() == "s" then 
+            ctrl.b = 0 
+            elseif key:lower() == "a" then 
+            ctrl.l = 0 
+            elseif key:lower() == "d" then 
+            ctrl.r = 0 
+            end 
+            end)
+            
+            plr.Character.Humanoid.StateChanged:Connect(function(o,n)
+                if n == Enum.HumanoidStateType.Running then
+                    ctrl.f = 1
+                else
+                    ctrl.f = 0
+                end
+            
+            end)
+            script.Parent.TextButton.MouseButton1Click:Connect(function()
+                if flying then
+                    flying = false
+                    speed = 50
+                else
+                    flying = true
+                    Fly()
+                end
+            end)
+            
+        end
+        coroutine.wrap(NQWSTGE_fake_script)()
+        local function RAQA_fake_script() -- Frame.Buttons 
+            local script = Instance.new('LocalScript', Frame)
+         
+            local Trigger = script.Parent.MiniTrext
+            local IsMini = false
+            function CreateTween(Instance,Style,Direction,Time,table,RepeatCount,CanRepeat,Delay)
+                local ts = game:GetService("TweenService")
+                local TweenInfo = TweenInfo.new(Time,Style,Direction,RepeatCount,CanRepeat,Delay)
+                local Tween = ts:Create(Instance,TweenInfo,table)
+                repeat wait() until Tween ~= nil
+                return Tween
+                
+            end
+            Trigger.MouseButton1Click:Connect(function()
+                if IsMini then
+                    CreateTween(script.Parent,Enum.EasingStyle.Quad,Enum.EasingDirection.Out,0.5,{Size = UDim2.new(0.265, 0,0.1, 0)},0,false,0.1):Play()
+                    IsMini = false
+                    Trigger.Text = "-"
+                else
+                    CreateTween(script.Parent,Enum.EasingStyle.Quad,Enum.EasingDirection.Out,0.5,{Size = UDim2.new(0.265, 0,0.042, 0)},0,false,0.1):Play()
+                    IsMini = true
+                    Trigger.Text = "+"
+                end
+            end)
+            script.Parent.Delete.MouseButton1Click:Connect(function()
+                script.Parent.Parent:Destroy()
+            end)
+        end
+        coroutine.wrap(RAQA_fake_script)()
+        local function TKVUMP_fake_script() -- Frame.Drag Gui 
+            local script = Instance.new('LocalScript', Frame)
+         
+            local UserInputService = game:GetService("UserInputService")
+            
+            local gui = script.Parent
+            
+            local dragging
+            local dragInput
+            local dragStart
+            local startPos
+            
+            local function update(input)
+                local delta = input.Position - dragStart
+                gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+            end
+            
+            gui.InputBegan:Connect(function(input)
+                if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+                    dragging = true
+                    dragStart = input.Position
+                    startPos = gui.Position
+                    
+                    input.Changed:Connect(function()
+                        if input.UserInputState == Enum.UserInputState.End then
+                            dragging = false
+                        end
+                    end)
+                end
+            end)
+            
+            gui.InputChanged:Connect(function(input)
+                if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+                    dragInput = input
+                end
+            end)
+            
+            UserInputService.InputChanged:Connect(function(input)
+                if input == dragInput and dragging then
+                    update(input)
+                end
+            end)
+        end
+        coroutine.wrap(TKVUMP_fake_script)()
+    end,
+ })
+ local Button2 = MainTab:CreateButton({
+    Name = "Infinite Jump",
+    Callback = function()
+        local ScreenGui = Instance.new("ScreenGui")
+        local main = Instance.new("Frame")
+        local TextLabel = Instance.new("TextLabel")
+        local Frame = Instance.new("Frame")
+        local INFJUMP = Instance.new("TextButton")
+        local TextLabel_2 = Instance.new("TextLabel")
+        
+        --Properties:
+        
+        ScreenGui.Parent = game.CoreGui
+        
+        main.Name = "main"
+        main.Parent = ScreenGui
+        main.Active = true
+        main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        main.BorderSizePixel = 0
+        main.Position = UDim2.new(0.119258665, 0, 0, 0)
+        main.Size = UDim2.new(0, 146, 0, 28)
+        main.Active = true
+        main.Draggable = false
+        
+        TextLabel.Parent = main
+        TextLabel.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+        TextLabel.BorderSizePixel = 0
+        TextLabel.Size = UDim2.new(0, 146, 0, 28)
+        TextLabel.Font = Enum.Font.SciFi
+        TextLabel.Text = "Misc"
+        TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+        TextLabel.TextSize = 17.000
+        TextLabel.TextWrapped = true
+        
+        Frame.Parent = main
+        Frame.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+        Frame.BorderSizePixel = 0
+        Frame.Position = UDim2.new(0, 0, 1, 0)
+        Frame.Size = UDim2.new(0, 146, 0, 61)
+        
+        INFJUMP.Name = "INFJUMP"
+        INFJUMP.Parent = main
+        INFJUMP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        INFJUMP.BorderSizePixel = 0
+        INFJUMP.Position = UDim2.new(0.794520497, 0, 1.6785717, 0)
+        INFJUMP.Size = UDim2.new(0, 21, 0, 21)
+        INFJUMP.Font = Enum.Font.SourceSans
+        INFJUMP.Text = ""
+        INFJUMP.TextColor3 = Color3.fromRGB(0, 0, 0)
+        INFJUMP.TextSize = 14.000
+        INFJUMP.MouseButton1Down:connect(function()
+        local Player = game:GetService'Players'.LocalPlayer;
+        local UIS = game:GetService'UserInputService';
+         
+        _G.JumpHeight = 50;
+         
+        function Action(Object, Function) if Object ~= nil then Function(Object); end end
+         
+        UIS.InputBegan:connect(function(UserInput)
+            if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.Space then
+                Action(Player.Character.Humanoid, function(self)
+                    if self:GetState() == Enum.HumanoidStateType.Jumping or self:GetState() == Enum.HumanoidStateType.Freefall then
+                        Action(self.Parent.HumanoidRootPart, function(self)
+                            self.Velocity = Vector3.new(0, _G.JumpHeight, 0);
+                        end)
+                    end
+                end)
+            end
+        end)
+        end)
+        
+        TextLabel_2.Parent = main
+        TextLabel_2.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+        TextLabel_2.BorderSizePixel = 0
+        TextLabel_2.Position = UDim2.new(0.0547945201, 0, 1.57142854, 0)
+        TextLabel_2.Size = UDim2.new(0, 94, 0, 28)
+        TextLabel_2.Font = Enum.Font.SciFi
+        TextLabel_2.Text = "Inf jump"
+        TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+        TextLabel_2.TextSize = 17.000
+        TextLabel_2.TextWrapped = true
+        
+        -- Scripts:
+        
+        local function TKDWQ_fake_script() -- INFJUMP.LocalScript 
+        local script = Instance.new('LocalScript', INFJUMP)
+        
+        function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+        
+        counter = 0
+        
+        while wait(0.1)do
+        script.Parent.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
+         
+        counter = counter + 0.01
+        end
+        end
+        coroutine.wrap(TKDWQ_fake_script)()
+    end,
+ })
+ local Button3 = MainTab:CreateButton({
+    Name = "ESP",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Ihaveash0rtnamefordiscord/Releases/main/MurderMystery2HighlightESP"))(' Watermelon ?')
+    end,
+ })
+ local Button4 = MainTab:CreateButton({
+    Name = "TP To Lobby",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-110.90312957763672, 136.67498779296875, 45.53193664550781)
+    end,
+ })
+ local Button5 = MainTab:CreateButton({
+    Name = "TP to player",
+    Callback = function()
+        loadstring(game:HttpGet("https://gist.githubusercontent.com/DagerFild/b4776075a0d26ef04394133ee6bd2081/raw/0ed51ac94057d2d9a9f00e1b037b9011c76ca54a/tpGUI", true))()
+    end,
+ })
+ local Button6 = MainTab:CreateButton({
+    Name = "Unlock All",
+    Callback = function()
+        local WeaponOwnedRange = {
+            min=1,
+            max=5
+            }
+            
+            local DataBase, PlayerData = getrenv()._G.Database, getrenv()._G.PlayerData
+            
+            local newOwned = {}
+            
+            for i,v in next, DataBase.Item do
+            newOwned[i] = math.random(WeaponOwnedRange.min, WeaponOwnedRange.max) -- newOwned[Weapon]: ItemCount
+            end
+            
+            local PlayerWeapons = PlayerData.Weapons
+            
+            game:GetService("RunService"):BindToRenderStep("InventoryUpdate", 0, function()
+            PlayerWeapons.Owned = newOwned
+            end)
+            
+            game.Players.LocalPlayer.Character.Humanoid.Health = 0
+    end,
+ })
+ local Button1 = OtherTab:CreateButton({
+    Name = "Eclipse",
+    Callback = function()
+        getgenv().mainKey = "nil"
+ 
+        local a,b,c,d,e=loadstring,request or http_request or (http and http.request) or (syn and syn.request),assert,tostring,"https://api.eclipsehub.xyz/auth";c(a and b,"Executor not Supported")a(b({Url=e.."?\107e\121\61"..d(mainKey),Headers={["User-Agent"]="Eclipse"}}).Body)()
+    end,
+ })
+ local Button = OtherTab:CreateButton({
+    Name = "Kidachi",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/KidichiHB/Kidachi/main/Scripts/MM2", true))()
+    end,
+ })
+ local Button = OtherTab:CreateButton({
+    Name = "Lunar",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/vwSaraa/LunarHub/main/mm2"))()
+    end,
+ })
+ local Button = OtherTab:CreateButton({
+    Name = "Old Dingus",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/pipesior/Dingus/main/Dingusv1.txt"))()
+    end,
+ }) 
